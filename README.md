@@ -78,7 +78,8 @@ Reload the systemd daemon, and make sure we can mount the volumes without an err
 [root@serverb~]# systemctl reboot
 ```
 
-The system should now boot successfully and you will see a serverb login prompt.  Lets change the systemd target.  ssh to serverb, sudo -i and let's see what target is set.
+The system should now boot successfully and you will see a serverb login prompt.  Lets change the systemd target mutli-user.target to graphical.target.   
+ssh to serverb, sudo -i and let's see what target is set.
 ```
 # systemctl get-default
 multi-user.target
