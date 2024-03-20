@@ -10,7 +10,7 @@ First at boot option menu type any key but enter and navigate to the rescue boot
 
 [](/image/bootoption01.png)
 
-Press the e key to enter the boot script.  In the boot script navigate to the line that start with...   Type Ctrl-e to go to the end of that line and type 'rd.break'  Press Ctrl-x to restart the server
+Press the e key to enter the boot script.  In the boot script navigate to the line that starts with linux...   Type Ctrl-e to go to the end of that line and type 'rd.break'  Press Ctrl-x to restart the server
 
 [](/image/bootoption02.png)
 
@@ -39,3 +39,48 @@ exit
 sh-5.1# exit
 ```
 
+At boot option menu type any key but enter and navigate to the "normal" boot option
+
+[](/image/bootoption03.png)
+
+Press the e key to enter the boot script.  In the boot script navigate to the line that starts with linux...   Type Ctrl-e to go to the end of that line and type 'systemd.unit=emergency.target'  Press Ctrl-x to restart the server
+
+[](/image/bootoption04.png)
+
+At the next prompt type the root password we create above
+
+[](/image/bootoption04.png)
+
+At the prompt type..
+```
+[root@serverb~]# mount -o remount,rw /
+```
+Mount all volumes and we will see a volume error
+```
+[root@serverb~]# mount -a
+mount: /olddata: can't find UUID=4a5....0bc.
+```
+Edit /etc/fstab and comment out the problem line
+```
+# vi /etc/fstab
+```
+
+Reload the systemd daemon, and make sure we can mount the volumes without an error.  Finally reboot the server
+```
+[root@serverb~]# systemctl daemon-reload
+[root@serverb~]# mount -a
+[root@serverb~]# systemctl reboots
+```
+
+The system should now boot successfully and you will see a serverb login prompt.  Lets change the systemd target.  ssh to serverb, sudo -i and let's see what target is set.
+```
+```
+
+Let's change the default.target to graphical.target
+```
+# systemctl set-default graphical.target
+# systemctl get-default
+graphical.target
+```
+
+We are finished
