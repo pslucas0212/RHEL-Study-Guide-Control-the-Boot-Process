@@ -15,7 +15,7 @@ Press the e key to enter the boot script.  In the boot script navigate to the li
 ![](/img/bootoption02.png)
 
 Press Enter to enter maintenance
-
+![](/img/bootoption03.png)
 At the prompt type
 ```
 sh-5.1# mount -o remount,rw /sysroot
