@@ -16,7 +16,9 @@ Press the e key to enter the boot script.  In the boot script navigate to the li
 
 Press Enter to enter maintenance
 ![](/img/bootoption03.png)
+
 At the prompt type
+![](/img/bootoption04.png)
 ```
 sh-5.1# mount -o remount,rw /sysroot
 sh-5.1# chroot /sysroot
@@ -41,15 +43,15 @@ sh-5.1# exit
 
 At boot option menu type any key but enter and navigate to the "normal" boot option
 
-[](/image/bootoption03.png)
+![](/img/bootoption06.png)
 
 Press the e key to enter the boot script.  In the boot script navigate to the line that starts with linux...   Type Ctrl-e to go to the end of that line and type 'systemd.unit=emergency.target'  Press Ctrl-x to restart the server
 
-[](/image/bootoption04.png)
+![](/img/bootoption06.png)
 
 At the next prompt type the root password we create above
 
-[](/image/bootoption05.png)
+![](/img/bootoption07.png)
 
 At the prompt type..
 ```
