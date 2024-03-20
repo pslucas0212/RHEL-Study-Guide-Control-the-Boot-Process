@@ -12,7 +12,7 @@ First at the boot option menu type any key but enter and navigate to the rescue 
 
 Press the e key to enter the boot script.  In the boot script navigate to the line that starts with linux...   Type Ctrl-e to go to the end of that line and type 'rd.break'  Press Ctrl-x to restart the server
 
-[](/image/bootoption02.png)
+![](/img/bootoption02.png)
 
 Press Enter to enter maintenance
 
