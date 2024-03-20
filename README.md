@@ -43,7 +43,7 @@ sh-5.1# exit
 
 At boot option menu type any key but enter and navigate to the "normal" boot option
 
-![](/img/bootoption06.png)
+![](/img/bootoption05.png)
 
 Press the e key to enter the boot script.  In the boot script navigate to the line that starts with linux...   Type Ctrl-e to go to the end of that line and type 'systemd.unit=emergency.target'  Press Ctrl-x to restart the server
 
