@@ -65,6 +65,10 @@ mount: /olddata: can't find UUID=4a5....0bc.
 Edit /etc/fstab and comment out the problem line
 ```
 # vi /etc/fstab
+UUID=5e75a2b9-1367-4cc8-bb38-4d6abc3964b8	/boot	xfs	defaults	0
+UUID=fb535add-9799-4a27-b8bc-e8259f39a767	/	xfs	defaults	0
+UUID=7B77-95E7	/boot/efi	vfat	defaults,uid=0,gid=0,umask=077,shortname=winnt	0	2
+#UUID=4d5c85a5-8921-4a06-8aff-80567e9689bc   /olddata   xfs   defaults   0 0
 ```
 
 Reload the systemd daemon, and make sure we can mount the volumes without an error.  Finally reboot the server
