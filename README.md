@@ -6,7 +6,7 @@ In this section we will look at techniques to reset the root password if lost an
 
 We see the server is struggling to boot properly and the root password has been lost.  Let's change the root password.
 
-First at boot option menu type any key but enter and navigate to the rescue boot option
+First at the boot option menu type any key but enter and navigate to the rescue boot option
 
 [](/image/bootoption01.png)
 
@@ -49,7 +49,7 @@ Press the e key to enter the boot script.  In the boot script navigate to the li
 
 At the next prompt type the root password we create above
 
-[](/image/bootoption04.png)
+[](/image/bootoption05.png)
 
 At the prompt type..
 ```
@@ -69,11 +69,13 @@ Reload the systemd daemon, and make sure we can mount the volumes without an err
 ```
 [root@serverb~]# systemctl daemon-reload
 [root@serverb~]# mount -a
-[root@serverb~]# systemctl reboots
+[root@serverb~]# systemctl reboot
 ```
 
 The system should now boot successfully and you will see a serverb login prompt.  Lets change the systemd target.  ssh to serverb, sudo -i and let's see what target is set.
 ```
+# systemctl get-default
+multi-user.target
 ```
 
 Let's change the default.target to graphical.target
